@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Clone E-Commerce</title>
+    <link
+      rel="icon"
+      href="./assets/img/shopping-bag.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="container">
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="navbar__logo">
+          <a href="./index.html">
+            <img src="./assets/img/logo.png" alt="" class="navbar__logo-img" />
+          </a>
+        </div>
+        <nav class="navbar__list">
+          <ul>
+            <li>
+              <a href="./index.html" class="navbar__item">Home</a>
+            </li>
+            <li>
+              <a href="./products-1.html" class="navbar__item">Product</a>
+            </li>
+          </ul>
+        </nav>
+
+        <img
+          src="./assets/img/cart.png"
+          alt=""
+          class="navbar__cart"
+          id="cart-icon"
+        />
+        <div class="cart">
+          <h2 class="cart-title">Your Orders</h2>
+          <div class="cart-content"></div>
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-prices">$0</div>
+          </div>
+          <button class="btn-buy">Buy Now</button>
+          <i class="fa-solid fa-x" id="close-cart"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Single Product Details -->
+    <div class="small-container single-product">
+      <div class="row">
+        <div class="col-2">
+          <img
+            src="./assets/img/web10.jpg"
+            alt=""
+            class="img-detail-four product-img"
+            id="productImg"
+          />
+          <div class="small-img-row">
+            <div class="small-img-col">
+              <img
+                src="./assets/img/web11.jpg"
+                alt=""
+                class="img-detail-four--sub small-img"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="./assets/img/web12.jpg"
+                alt=""
+                class="img-detail-four--sub small-img"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="./assets/img/web13.jpg"
+                alt=""
+                class="img-detail-four--sub small-img"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="./assets/img/web14.jpg"
+                alt=""
+                class="img-detail-four--sub small-img"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <p><a href="./index.html" style="color: #555">Home</a> / T-Shirts</p>
+          <h1 class="title">Blue Printed Polo Collar</h1>
+          <h4 class="price">$39.00</h4>
+          <a href="#!" class="btn" id="add-to-cart">Add to cart</a>
+          <h3>
+            Product Details
+            <i class="fa fa-indent"></i>
+          </h3>
+          <p>
+            Navy blue Tshirt for men <br />
+            Solid <br />
+            Regular length <br />
+            Polo collar <br />
+            Short, regular sleeves <br />
+            Knitted cotton fabric <br />
+            Button closure
+          </p>
+          <ul class="stars">
+            <li>
+              <i class="fa-solid fa-star star"></i>
+            </li>
+            <li>
+              <i class="fa-solid fa-star star"></i>
+            </li>
+            <li>
+              <i class="fa-solid fa-star star"></i>
+            </li>
+            <li>
+              <i class="fa-solid fa-star star"></i>
+            </li>
+            <li>
+              <i class="fa-solid fa-star star"></i>
+            </li>
+          </ul>
+          <div class="output"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Single Product Details -->
+
+    <!-- Title -->
+    <div class="small-container">
+      <div class="row row-2">
+        <h2>Related Producst</h2>
+        <a href="./products.html" class="view-link"> View More </a>
+      </div>
+    </div>
+    <!-- Title -->
+
+    <!-- Featured Products -->
+    <div class="small-container">
+      <div class="row">
+        <div class="col-4">
+          <a href="products-details.html">
+            <img src="./assets/img/product-1.jpg" alt="" />
+          </a>
+          <div class="content">
+            <h4 class="name">Red Printed T-Shirts</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$50.00</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <a href="./products-details-two.html">
+            <img src="./assets/img/product-22.jpg" alt="" />
+          </a>
+          <div class="content">
+            <h4 class="name">Woven Design Sneakers</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$37.00</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <a href="products-details-three.html">
+            <img src="./assets/img/web5.jpg" alt="" />
+          </a>
+          <div class="content">
+            <h4 class="name">Men Black Printed</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$60.00</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <a href="./products-details-four.html">
+            <img src="./assets/img/web10.jpg" alt="" />
+          </a>
+          <div class="content">
+            <h4 class="name">Blue Printed Polo Collar</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$39.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Featured Products -->
+
+    <!-- Footer -->
+    <section class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and Ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="./assets/img/play-store.png" alt="" />
+              <img src="./assets/img/app-store.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="./assets/img/logo-white.png" alt="" />
+            <p>Download App for Android and Ios mobile phone.</p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/nguyenhoangbao.1704/"
+                  >Facebook</a
+                >
+                <i class="fa-brands fa-facebook"></i>
+              </li>
+              <li>
+                <a href="mailto:thaibaok4.1@gmail.com">Gmail</a>
+                <i class="fa-sharp fa-solid fa-envelope"></i>
+              </li>
+              <li>
+                <a href="tel: +84 012345678">Phone Number</a>
+                <i class="fa-solid fa-phone"></i>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/">Youtube</a>
+                <i class="fa-brands fa-youtube"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Copyright baoDeV 2023 - E-Commerce</p>
+      </div>
+    </section>
+    <!-- JS-->
+    <script src="./assets/js/details.js"></script>
+    <script src="./assets/js/change-img.js"></script>
+  </body>
+</html>

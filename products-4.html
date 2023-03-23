@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Clone E-Commerce</title>
+    <link
+      rel="icon"
+      href="./assets/img/shopping-bag.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="container">
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="navbar__logo">
+          <a href="./index.html">
+            <img src="./assets/img/logo.png" alt="" class="navbar__logo-img" />
+          </a>
+        </div>
+        <nav class="navbar__list">
+          <ul>
+            <li>
+              <a href="./index.html" class="navbar__item">Home</a>
+            </li>
+          </ul>
+        </nav>
+        <img
+          src="./assets/img/cart.png"
+          alt=""
+          class="navbar__cart"
+          id="cart-icon"
+        />
+        <div class="cart">
+          <h2 class="cart-title">Your Orders</h2>
+          <div class="cart-content"></div>
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-prices">$0</div>
+          </div>
+          <button class="btn-buy">Buy Now</button>
+          <i class="fa-solid fa-x" id="close-cart"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Featured Products -->
+    <div class="small-container">
+      <!-- All Products -->
+      <div class="row row-2">
+        <h2>All Products</h2>
+        <select name="" id="select">
+          <option value="default">Default Shorting</option>
+          <option value="by-price">By price - Low to high</option>
+          <option value="by-price-low">By price - High to low</option>
+          <option value="by-rating">Short by rating</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="col-4" data-rating="5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-33.avif"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Lace-Up Shoes</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$11.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="4">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-34.jpg"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Walking Sport Shoes</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$12.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-35.webp"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Unisex Black Clogs</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$5.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="4.5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-36.webp"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Unisex White Flip Flops</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="price">$7.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4" data-rating="5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-37.jpg"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Olive Green Sliders</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$9.80</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="4">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-38.avif"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Solid Sweatshirt</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$20.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="4.5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-39.webp"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Blue Sweatshirt</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="price">$17.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-40.webp"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Black Solid Sweatshirt</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$10.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-41.webp"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Black Solid Blazer</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$30.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-42.avif"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Slim-Fit Formal Blazer</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$43.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="4.5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-43.avif"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Navy Party Tuxedo</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="price">$40.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="4.5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-43.webp"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Black Solid Blazer</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="price">$39.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4" data-rating="4.5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-44.jpg"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Navy Blue Blazer</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="price">$50.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-45.webp"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Green Self Blazer</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$27.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="4.5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-46.webp"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Textured Casual Blazer</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="price">$60.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+        <div class="col-4" data-rating="5">
+          <div class="content">
+            <img
+              src="./assets/img/img-product-47.avif"
+              alt=""
+              class="product-img"
+            />
+            <h4 class="name">Men Blue Formal Blazer</h4>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$37.00</p>
+            <i class="fa-solid fa-bag-shopping box-cart--add"></i>
+          </div>
+        </div>
+      </div>
+      <div class="page-btn">
+        <span class="page active" data-page="1">1</span>
+        <span class="page" data-page="2">2</span>
+        <span class="page" data-page="3">3</span>
+        <span class="page" data-page="4">4</span>
+      </div>
+    </div>
+    <!-- Featured Products -->
+
+    <!-- Brands -->
+    <section class="brands">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-5">
+            <img src="./assets/img/logo-godrej.png" alt="" />
+          </div>
+          <div class="col-5">
+            <img src="./assets/img/logo-coca-cola.png" alt="" />
+          </div>
+          <div class="col-5">
+            <img src="./assets/img/logo-oppo.png" alt="" />
+          </div>
+          <div class="col-5">
+            <img src="./assets/img/logo-paypal.png" alt="" />
+          </div>
+          <div class="col-5">
+            <img src="./assets/img/logo-philips.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Brands -->
+
+    <!-- Footer -->
+    <section class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and Ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="./assets/img/play-store.png" alt="" />
+              <img src="./assets/img/app-store.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="./assets/img/logo-white.png" alt="" />
+            <p>Download App for Android and Ios mobile phone.</p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/nguyenhoangbao.1704/"
+                  >Facebook</a
+                >
+                <i class="fa-brands fa-facebook"></i>
+              </li>
+              <li>
+                <a href="mailto:thaibaok4.1@gmail.com">Gmail</a>
+                <i class="fa-sharp fa-solid fa-envelope"></i>
+              </li>
+              <li>
+                <a href="tel: +84 012345678">Phone Number</a>
+                <i class="fa-solid fa-phone"></i>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/">Youtube</a>
+                <i class="fa-brands fa-youtube"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Copyright baoDeV 2023 - E-Commerce</p>
+      </div>
+    </section>
+    <!-- End Footer -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/sort.js"></script>
+    <script src="./assets/js/pagination.js"></script>
+  </body>
+</html>

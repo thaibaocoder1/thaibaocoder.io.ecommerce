@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Clone E-Commerce</title>
+    <link
+      rel="icon"
+      href="./assets/img/shopping-bag.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/account.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="container">
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="navbar__logo">
+          <a href="./index.html">
+            <img src="./assets/img/logo.png" alt="" class="navbar__logo-img" />
+          </a>
+        </div>
+        <nav class="navbar__list">
+          <ul>
+            <li>
+              <a href="./index.html" class="navbar__item">Home</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="cart">
+          <h2 class="cart-title">Your Orders</h2>
+          <div class="cart-content"></div>
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-prices">$0</div>
+          </div>
+          <button class="btn-buy">Buy Now</button>
+          <i class="fa-solid fa-x" id="close-cart"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Header -->
+    <!-- Account Page -->
+    <div class="account-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-2">
+            <img src="./assets/img/image1.png" alt="" />
+          </div>
+          <div class="col-2">
+            <div class="form-container">
+              <div class="main">
+                <input type="checkbox" id="checkbox" aria-hidden="true" />
+                <div class="login">
+                  <form class="form form-login">
+                    <label
+                      for="checkbox"
+                      aria-hidden="true"
+                      class="form-heading"
+                      >Log in</label
+                    >
+                    <div class="form-field">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder=" "
+                        required=""
+                        id="form-input"
+                        class="form-input"
+                      />
+                      <label for="form-input" class="form-label">Email</label>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="password"
+                        name="pswd"
+                        placeholder=" "
+                        required=""
+                        id="form-input"
+                        class="form-input"
+                      />
+                      <label for="form-input" class="form-label"
+                        >Password</label
+                      >
+                    </div>
+                    <button>Log in</button>
+                  </form>
+                </div>
+
+                <div class="register">
+                  <form class="form form-register">
+                    <label
+                      for="checkbox"
+                      aria-hidden="true"
+                      class="form-heading"
+                      >Register</label
+                    >
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        name="txt"
+                        placeholder="Username"
+                        required=""
+                        id="form-input"
+                        class="form-input"
+                      />
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        required=""
+                        id="form-input"
+                        class="form-input"
+                      />
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="password"
+                        name="pswd"
+                        placeholder="Password"
+                        required=""
+                        id="form-input"
+                        class="form-input"
+                      />
+                    </div>
+                    <button>Register</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <section class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and Ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="./assets/img/play-store.png" alt="" />
+              <img src="./assets/img/app-store.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="./assets/img/logo-white.png" alt="" />
+            <p>Download App for Android and Ios mobile phone.</p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/nguyenhoangbao.1704/"
+                  >Facebook</a
+                >
+                <i class="fa-brands fa-facebook"></i>
+              </li>
+              <li>
+                <a href="mailto:thaibaok4.1@gmail.com">Gmail</a>
+                <i class="fa-sharp fa-solid fa-envelope"></i>
+              </li>
+              <li>
+                <a href="tel: +84 012345678">Phone Number</a>
+                <i class="fa-solid fa-phone"></i>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/">Youtube</a>
+                <i class="fa-brands fa-youtube"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Copyright baoDeV 2023 - E-Commerce</p>
+      </div>
+    </section>
+    <!-- End Footer -->
+  </body>
+</html>
