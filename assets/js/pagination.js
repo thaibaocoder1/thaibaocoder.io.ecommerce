@@ -6,6 +6,6 @@ spans.forEach((span) => {
     currentPage = page;
     spans.forEach((s) => s.classList.remove("active"));
     span.classList.add("active");
-    window.location.href = `/products-${page}.html`;
+    window.location.href = `/ecommerceWebsiteThaiBao/products-${page}.html`;
   });
 });
