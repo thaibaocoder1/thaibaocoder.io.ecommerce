@@ -69,41 +69,51 @@ function addProductToCart(title, price, productImg) {
   var cartShopBox = document.createElement("div");
   cartShopBox.classList.add("cart-box");
   var cartItems = document.getElementsByClassName("cart-content")[0];
-  var cartItemNames = cartItems.getElementsByClassName("cart-product-title");
-  for (var i = 0; i < cartItemNames.length; ++i) {
-    if (cartItemNames[i].innerText == title) {
-      alert("You have already add this item to cart");
-      return;
+  var cartBoxes = cartItems.getElementsByClassName("cart-box");
+  var flag = false; // tạo biến flag để kiểm tra trùng lặp sản phẩm
+  for (var i = 0; i < cartBoxes.length; i++) {
+    var cartBox = cartBoxes[i];
+    var cartItemName = cartBox.getElementsByClassName("cart-product-title")[0];
+    if (cartItemName.innerText === title) {
+      var quantityElemnt = cartBox.getElementsByClassName("cart-quantity")[0];
+      quantityElemnt.value = parseInt(quantityElemnt.value) + 1;
+      flag = true; // sản phẩm đã tồn tại trong giỏ hàng
+      break;
     }
   }
-  var cartBoxContent = `
-                          <img src="${productImg}" alt="" class="cart-img">
-                              <div class="detail-box">
-                                  <div class="cart-product-title">${title}</div>
-                                  <div class="cart-price">${price}</div>
-                                    <div>
-                                    <input type="number" name="" id="" class="cart-quantity" value="1">
-                                    <select name="" id="">
-                                      <option value="">Select Size</option>
-                                      <option value="">XXL</option>
-                                      <option value="">XL</option>
-                                      <option value="">Large</option>
-                                      <option value="">Medium</option>
-                                      <option value="">Small</option>
-                                  </select>
-                                  </div>
-                              </div>
-                              <i class="fa-solid fa-trash cart-remove"></i>
-                              `;
-  cartShopBox.innerHTML = cartBoxContent;
-  cartItems.append(cartShopBox);
-  cartShopBox
-    .getElementsByClassName("cart-remove")[0]
-    .addEventListener("click", removeCartItem);
-  cartShopBox
-    .getElementsByClassName("cart-quantity")[0]
-    .addEventListener("change", quantityChanged);
+  if (!flag) {
+    // sản phẩm không tồn tại trong giỏ hàng, thêm sản phẩm mới
+    var cartBoxContent = `
+      <img src="${productImg}" alt="" class="cart-img">
+      <div class="detail-box">
+        <div class="cart-product-title">${title}</div>
+        <div class="cart-price">${price}</div>
+        <div>
+          <input type="number" name="" id="" class="cart-quantity" value="1">
+          <select name="" id="">
+            <option value="">Select Size</option>
+            <option value="">XXL</option>
+            <option value="">XL</option>
+            <option value="">Large</option>
+            <option value="">Medium</option>
+            <option value="">Small</option>
+          </select>
+        </div>
+      </div>
+      <i class="fa-solid fa-trash cart-remove"></i>
+    `;
+    cartShopBox.innerHTML = cartBoxContent;
+    cartItems.append(cartShopBox);
+    cartShopBox
+      .getElementsByClassName("cart-remove")[0]
+      .addEventListener("click", removeCartItem);
+    cartShopBox
+      .getElementsByClassName("cart-quantity")[0]
+      .addEventListener("change", quantityChanged);
+  }
+  updateTotal();
 }
+
 function updateTotal() {
   var cartContent = document.getElementsByClassName("cart-content")[0];
   var cartBoxes = cartContent.getElementsByClassName("cart-box");
