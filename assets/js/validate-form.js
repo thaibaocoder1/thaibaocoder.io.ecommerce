@@ -1,4 +1,3 @@
-// Lấy phần tử form và các trường nhập liệu
 const form = document.querySelector(".form");
 const usernameInput = form.querySelector('input[name="txt"]');
 const emailInput = form.querySelector('input[name="email"]');
