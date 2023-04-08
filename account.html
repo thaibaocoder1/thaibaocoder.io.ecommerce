@@ -62,87 +62,38 @@
             <img src="./assets/img/image1.png" alt="" />
           </div>
           <div class="col-2">
-            <div class="form-container">
-              <div class="main">
-                <input type="checkbox" id="checkbox" aria-hidden="true" />
-                <div class="login">
-                  <form class="form form-login">
-                    <label
-                      for="checkbox"
-                      aria-hidden="true"
-                      class="form-heading"
-                      >Log in</label
-                    >
-                    <div class="form-field">
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder=" "
-                        required=""
-                        id="form-input"
-                        class="form-input"
-                      />
-                      <label for="form-input" class="form-label">Email</label>
-                    </div>
-                    <div class="form-field">
-                      <input
-                        type="password"
-                        name="pswd"
-                        placeholder=" "
-                        required=""
-                        id="form-input"
-                        class="form-input"
-                      />
-                      <label for="form-input" class="form-label"
-                        >Password</label
-                      >
-                    </div>
-                    <button>Log in</button>
-                  </form>
+            <div class="container-form">
+              <h1>Login form</h1>
+              <form action="">
+                <div class="form-control">
+                  <input id="username" type="text" placeholder="Username" />
+                  <small></small>
+                  <span></span>
                 </div>
-
-                <div class="register">
-                  <form class="form form-register">
-                    <label
-                      for="checkbox"
-                      aria-hidden="true"
-                      class="form-heading"
-                      >Register</label
-                    >
-                    <div class="form-field">
-                      <input
-                        type="text"
-                        name="txt"
-                        placeholder="Username"
-                        required=""
-                        id="form-input"
-                        class="form-input"
-                      />
-                    </div>
-                    <div class="form-field">
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        required=""
-                        id="form-input"
-                        class="form-input"
-                      />
-                    </div>
-                    <div class="form-field">
-                      <input
-                        type="password"
-                        name="pswd"
-                        placeholder="Password"
-                        required=""
-                        id="form-input"
-                        class="form-input"
-                      />
-                    </div>
-                    <button>Register</button>
-                  </form>
+                <div class="form-control">
+                  <input id="email" type="email" placeholder="Email" />
+                  <small></small>
+                  <span></span>
                 </div>
-              </div>
+                <div class="form-control">
+                  <input id="password" type="password" placeholder="Password" />
+                  <small></small>
+                  <span></span>
+                </div>
+                <div class="form-control">
+                  <input
+                    id="re-password"
+                    type="password"
+                    placeholder="Confirm password"
+                  />
+                  <small></small>
+                  <span></span>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+                <div class="signup-link">
+                  <p>Not a member? <a href="#!">Signup</a></p>
+                </div>
+              </form>
             </div>
           </div>
         </div>
