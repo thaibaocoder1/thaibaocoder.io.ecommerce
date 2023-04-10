@@ -84,5 +84,6 @@ formBlock.addEventListener("submit", (e) => {
     alert("Error login!");
   } else {
     window.location.href = `../../index.html`;
+    alert("Login success!");
   }
 });

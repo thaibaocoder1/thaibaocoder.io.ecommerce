@@ -69,12 +69,16 @@ function addProductToCart(title, price, productImg) {
   var cartItems = document.getElementsByClassName("cart-content")[0];
   var cartItemNames = cartItems.getElementsByClassName("cart-product-title");
   for (var i = 0; i < cartItemNames.length; ++i) {
-    if (cartItemNames[i].innerText == title) {
+    if (cartItemNames[i].innerText === title) {
       var cartBox = cartItemNames[i].parentElement;
       var quantityElemnt = cartBox.getElementsByClassName("cart-quantity")[0];
       var currentQuantity = parseInt(quantityElemnt.value);
       var newQuantity = currentQuantity + 1;
       quantityElemnt.value = newQuantity;
+      var priceElement = cartBox.getElementsByClassName("cart-price")[0];
+      var currentPrice = parseFloat(priceElement.innerText.replace("$", ""));
+      var newPrice = currentPrice + parseFloat(price);
+      priceElement.innerText = "$" + newPrice.toFixed(2);
       updateTotal();
       return;
     }
