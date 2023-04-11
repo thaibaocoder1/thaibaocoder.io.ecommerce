@@ -59,8 +59,8 @@ function quantityChanged(e) {
 function addCartClicked(event) {
   var buttonCta = event.target;
   var shopProducts = buttonCta.parentElement;
-  var title = shopProducts.getElementsByClassName("name")[0].innerText;
-  var price = shopProducts.getElementsByClassName("price")[0].innerText;
+  var title = shopProducts.getElementsByClassName("name")[0].textContent;
+  var price = shopProducts.getElementsByClassName("price")[0].textContent;
   var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
   addProductToCart(title, price, productImg);
   updateTotal();
@@ -69,16 +69,19 @@ function addProductToCart(title, price, productImg) {
   var cartItems = document.getElementsByClassName("cart-content")[0];
   var cartItemNames = cartItems.getElementsByClassName("cart-product-title");
   for (var i = 0; i < cartItemNames.length; ++i) {
-    if (cartItemNames[i].innerText === title) {
-      var cartBox = cartItemNames[i].parentElement;
+    if (cartItemNames[i].textContent === title) {
+      var cartBox = cartItemNames[i].parentElement.parentElement;
       var quantityElemnt = cartBox.getElementsByClassName("cart-quantity")[0];
-      var currentQuantity = parseInt(quantityElemnt.value);
+      var priceElement = cartBox.getElementsByClassName("cart-price")[0];
+      var currentQuantity = parseFloat(quantityElemnt.value);
       var newQuantity = currentQuantity + 1;
       quantityElemnt.value = newQuantity;
-      var priceElement = cartBox.getElementsByClassName("cart-price")[0];
-      var currentPrice = parseFloat(priceElement.innerText.replace("$", ""));
-      var newPrice = currentPrice + parseFloat(price);
-      priceElement.innerText = "$" + newPrice.toFixed(2);
+      var currentPrice = parseFloat(
+        priceElement.getAttribute("data-price").replace("$", "")
+      );
+      console.log(typeof currentPrice);
+      var newPrice = currentPrice * newQuantity;
+      priceElement.textContent = `$ ${newPrice.toFixed(2)}`;
       updateTotal();
       return;
     }
@@ -89,7 +92,7 @@ function addProductToCart(title, price, productImg) {
                           <img src="${productImg}" alt="" class="cart-img">
                               <div class="detail-box">
                                   <div class="cart-product-title">${title}</div>
-                                  <div class="cart-price">${price}</div>
+                                  <div class="cart-price" data-price="${price}">${price}</div>
                                     <div>
                                     <input type="number" name="" id="" class="cart-quantity" value="1">
                                     <select name="" id="">
@@ -114,7 +117,6 @@ function addProductToCart(title, price, productImg) {
     .addEventListener("change", quantityChanged);
   updateTotal();
 }
-
 function updateTotal() {
   var cartContent = document.getElementsByClassName("cart-content")[0];
   var cartBoxes = cartContent.getElementsByClassName("cart-box");
@@ -124,7 +126,7 @@ function updateTotal() {
     var priceElement = cartBox.getElementsByClassName("cart-price")[0];
     var quantityElemnt = cartBox.getElementsByClassName("cart-quantity")[0];
     var price = parseFloat(priceElement.innerText.replace("$", ""));
-    var quantity = quantityElemnt.value;
+    var quantity = parseFloat(quantityElemnt.value);
     total = total + price * quantity;
   }
   total = Math.round(total * 100) / 100;
