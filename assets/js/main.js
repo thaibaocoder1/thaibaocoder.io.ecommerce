@@ -37,7 +37,7 @@ function ready() {
     .addEventListener("click", buyButtonClicked);
 }
 function buyButtonClicked() {
-  alert("Your order is placed");
+  alert("Your order is placed!");
   var cartContent = document.getElementsByClassName("cart-content")[0];
   while (cartContent.hasChildNodes()) {
     cartContent.removeChild(cartContent.firstChild);
@@ -54,15 +54,6 @@ function quantityChanged(e) {
   if (isNaN(input.value) || input.value <= 0) {
     input.value = 1;
   }
-  var cartBox = input.parentElement.parentElement.parentElement;
-  var priceElement = cartBox.getElementsByClassName("cart-price")[0];
-  // var price = parseFloat(priceElement.textContent.replace("$", ""));
-  var price = parseFloat(
-    priceElement.getAttribute("data-price").replace("$", "")
-  );
-  var quantity = parseInt(input.value);
-  var newPrice = price * quantity;
-  priceElement.innerHTML = "$" + newPrice.toFixed(2);
   updateTotal();
 }
 function addCartClicked(event) {
@@ -85,11 +76,6 @@ function addProductToCart(title, price, productImg) {
       var currentQuantity = parseFloat(quantityElemnt.value);
       var newQuantity = currentQuantity + 1;
       quantityElemnt.value = newQuantity;
-      var currentPrice = parseFloat(
-        priceElement.getAttribute("data-price").replace("$", "")
-      );
-      var newPrice = currentPrice * newQuantity;
-      priceElement.textContent = `$ ${newPrice.toFixed(2)}`;
       updateTotal();
       return;
     }
@@ -101,7 +87,7 @@ function addProductToCart(title, price, productImg) {
                               <div class="detail-box">
                                   <div class="cart-product-title">${title}</div>
                                   <div class="cart-price" data-price="${price}">${price}</div>
-                                    <div>
+                                    <div style="display: flex;">
                                     <input type="number" name="" id="" class="cart-quantity" value="1">
                                     <select name="" id="">
                                       <option value="">Select Size</option>
