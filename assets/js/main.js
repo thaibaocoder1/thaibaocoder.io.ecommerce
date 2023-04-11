@@ -54,6 +54,15 @@ function quantityChanged(e) {
   if (isNaN(input.value) || input.value <= 0) {
     input.value = 1;
   }
+  var cartBox = input.parentElement.parentElement.parentElement;
+  var priceElement = cartBox.getElementsByClassName("cart-price")[0];
+  // var price = parseFloat(priceElement.textContent.replace("$", ""));
+  var price = parseFloat(
+    priceElement.getAttribute("data-price").replace("$", "")
+  );
+  var quantity = parseInt(input.value);
+  var newPrice = price * quantity;
+  priceElement.innerHTML = "$" + newPrice.toFixed(2);
   updateTotal();
 }
 function addCartClicked(event) {
@@ -79,7 +88,6 @@ function addProductToCart(title, price, productImg) {
       var currentPrice = parseFloat(
         priceElement.getAttribute("data-price").replace("$", "")
       );
-      console.log(typeof currentPrice);
       var newPrice = currentPrice * newQuantity;
       priceElement.textContent = `$ ${newPrice.toFixed(2)}`;
       updateTotal();
