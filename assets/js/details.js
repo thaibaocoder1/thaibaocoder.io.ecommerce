@@ -27,11 +27,8 @@ function ready() {
     input.addEventListener("change", quantityChanged);
   }
   // Add item to cart
-  var addCart = document.getElementsByClassName("box-cart--add");
-  for (var i = 0; i < addCart.length; i++) {
-    var button = addCart[i];
-    button.addEventListener("click", addCartClicked);
-  }
+  var addCart = document.getElementById("add-to-cart");
+  addCart.addEventListener("click", addCartClicked);
   document
     .getElementsByClassName("btn-buy")[0]
     .addEventListener("click", buyButtonClicked);
@@ -56,12 +53,10 @@ function quantityChanged(e) {
   }
   updateTotal();
 }
-function addCartClicked(event) {
-  var buttonCta = event.target;
-  var shopProducts = buttonCta.parentElement;
-  var title = shopProducts.getElementsByClassName("name")[0].textContent;
-  var price = shopProducts.getElementsByClassName("price")[0].textContent;
-  var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
+function addCartClicked() {
+  var title = document.getElementsByClassName("name")[0].textContent;
+  var price = document.getElementsByClassName("price")[0].textContent;
+  var productImg = document.getElementsByClassName("product-img")[0].src;
   addProductToCart(title, price, productImg);
   updateTotal();
 }
@@ -126,13 +121,12 @@ function updateTotal() {
     var priceElement = cartBox.getElementsByClassName("cart-price")[0];
     var quantityElemnt = cartBox.getElementsByClassName("cart-quantity")[0];
     var price = parseFloat(priceElement.innerText.replace("$", ""));
-    var quantity = parseFloat(quantityElemnt.value);
+    var quantity = quantityElemnt.value;
     total = total + price * quantity;
   }
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName("total-prices")[0].innerText = "$" + total;
 }
-
 // Changed click on images
 var productImg = document.getElementById("productImg");
 var smallImg = document.getElementsByClassName("small-img");
