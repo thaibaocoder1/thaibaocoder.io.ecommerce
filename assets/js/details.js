@@ -27,8 +27,11 @@ function ready() {
     input.addEventListener("change", quantityChanged);
   }
   // Add item to cart
-  var addCart = document.getElementById("add-to-cart");
-  addCart.addEventListener("click", addCartClicked);
+  var addCart = document.getElementsByClassName("box-cart--add");
+  for (var i = 0; i < addCart.length; i++) {
+    var button = addCart[i];
+    button.addEventListener("click", addCartClicked);
+  }
   document
     .getElementsByClassName("btn-buy")[0]
     .addEventListener("click", buyButtonClicked);
@@ -53,29 +56,43 @@ function quantityChanged(e) {
   }
   updateTotal();
 }
-function addCartClicked() {
-  var title = document.getElementsByClassName("name")[0].innerText;
-  var price = document.getElementsByClassName("price")[0].innerText;
-  var productImg = document.getElementsByClassName("product-img")[0].src;
+function addCartClicked(event) {
+  var buttonCta = event.target;
+  var shopProducts = buttonCta.parentElement;
+  var title = shopProducts.getElementsByClassName("name")[0].textContent;
+  var price = shopProducts.getElementsByClassName("price")[0].textContent;
+  var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
   addProductToCart(title, price, productImg);
   updateTotal();
 }
 function addProductToCart(title, price, productImg) {
-  var cartShopBox = document.createElement("div");
-  cartShopBox.classList.add("cart-box");
   var cartItems = document.getElementsByClassName("cart-content")[0];
   var cartItemNames = cartItems.getElementsByClassName("cart-product-title");
   for (var i = 0; i < cartItemNames.length; ++i) {
-    if (cartItemNames[i].innerText == title) {
-      alert("You have already add this item to cart");
+    if (cartItemNames[i].textContent === title) {
+      var cartBox = cartItemNames[i].parentElement.parentElement;
+      var quantityElemnt = cartBox.getElementsByClassName("cart-quantity")[0];
+      var priceElement = cartBox.getElementsByClassName("cart-price")[0];
+      var currentQuantity = parseFloat(quantityElemnt.value);
+      var newQuantity = currentQuantity + 1;
+      quantityElemnt.value = newQuantity;
+      var currentPrice = parseFloat(
+        priceElement.getAttribute("data-price").replace("$", "")
+      );
+      console.log(typeof currentPrice);
+      var newPrice = currentPrice * newQuantity;
+      priceElement.textContent = `$ ${newPrice.toFixed(2)}`;
+      updateTotal();
       return;
     }
   }
+  var cartShopBox = document.createElement("div");
+  cartShopBox.classList.add("cart-box");
   var cartBoxContent = `
                           <img src="${productImg}" alt="" class="cart-img">
                               <div class="detail-box">
                                   <div class="cart-product-title">${title}</div>
-                                  <div class="cart-price">${price}</div>
+                                  <div class="cart-price" data-price="${price}">${price}</div>
                                     <div>
                                     <input type="number" name="" id="" class="cart-quantity" value="1">
                                     <select name="" id="">
@@ -98,6 +115,7 @@ function addProductToCart(title, price, productImg) {
   cartShopBox
     .getElementsByClassName("cart-quantity")[0]
     .addEventListener("change", quantityChanged);
+  updateTotal();
 }
 function updateTotal() {
   var cartContent = document.getElementsByClassName("cart-content")[0];
@@ -108,12 +126,13 @@ function updateTotal() {
     var priceElement = cartBox.getElementsByClassName("cart-price")[0];
     var quantityElemnt = cartBox.getElementsByClassName("cart-quantity")[0];
     var price = parseFloat(priceElement.innerText.replace("$", ""));
-    var quantity = quantityElemnt.value;
+    var quantity = parseFloat(quantityElemnt.value);
     total = total + price * quantity;
   }
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName("total-prices")[0].innerText = "$" + total;
 }
+
 // Changed click on images
 var productImg = document.getElementById("productImg");
 var smallImg = document.getElementsByClassName("small-img");
